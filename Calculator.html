@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(210, 100, 184);
+            font-size: 30px;
+        }
+
+        p {
+            text-align: center;
+            border: 6px solid;
+        }
+                 p1{
+           font-size:20px;
+ 
+
+}
+
+    </style>
+</head>
+
+<body>
+    <p1> Zahlen kleiner als Null werden in Gelb angezeigt, Zahlen größer Null bis Einhundert werden rosa angezeigt und Zahlen größer als Einhundert werden grün angezeigt. </p1>
+<br>
+<br>
+    <input id="n1" type="text" placeholder="first no">
+    <span id="sign">?</span>
+    <input id="n2" type="text" placeholder="second no">
+    <span>=</span>
+    <span id="res">result</span>
+    <br><br>
+    <p id="colortext">show the color of your No</p>
+
+    <button onclick="cal('+')">+</button>
+    <button onclick="cal('-')">-</button>
+    <button onclick="cal('/')">/</button>
+    <button onclick="cal('*')">*</button>
+    <button onclick="cal('log')">log</button>
+
+    <script>
+        var num1 = document.getElementById("n1");
+        var num2 = document.getElementById("n2");
+        var res = document.getElementById("res");
+        var si = document.getElementById("sign");
+
+        function cal(o) {
+            switch (o) {
+                case "+":
+                    res.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+                    break;
+                case "-":
+                    res.innerHTML = parseInt(num1.value) - parseInt(num2.value);
+                    break;
+                case "/":
+                    res.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+                    break;
+                case "*":
+                    res.innerHTML = parseInt(num1.value) * parseInt(num2.value);
+                    break;
+                default:
+                    alert("It doesn't explain.");
+                    return; // Exit the function if default case
+            }
+            si.innerHTML = o;
+            var x = chg();
+            showcolor(x);
+        }
+
+        function chg() {
+            if (res.innerHTML < 0) {
+                res.style.color = "red";
+                return "red";
+            } else if (res.innerHTML > 0 && res.innerHTML <= 100) {
+                res.style.color = "pink";
+                return "pink";
+            } else {
+                res.style.color = "green";
+                return "green";
+            }
+        }
+
+        function showcolor(colorr) {
+            document.getElementById("colortext").innerHTML = colorr;
+        }
+    </script>
+</body>
+
+</html>

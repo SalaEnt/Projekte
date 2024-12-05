@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>ی پروژه جدید</title>
+
+
+    <style>
+        h2 {
+
+            text-align: center;
+            background-color: lightblue;
+
+        }
+
+        p {
+
+            text-align: center
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 id="demo"> Sie können etwas in diesen Text mit der Tasten wechseln </h2>
+
+    <p>
+
+        <button onclick="inc()"> Großer </button>
+        <button onclick="dec()"> Kleiner </button>
+
+        <br>
+        <br>
+
+        <button onclick="changecolor('green','25px')"> Grün </button>
+        <button onclick="changecolor('red','50px')"> Rot </button>
+        <button onclick="changecolor('pink','80px')"> Rosa </button>
+
+        <br>
+        <br>
+
+        <button onclick="hide1()"> Heimlich machen </button>
+        <button onclick="show1()"> zeigen </button>
+
+
+
+    </p>
+
+
+
+    <script>
+
+        function inc() {
+
+            document.getElementById("demo").style.fontSize = '90px';
+            alert(document.getElementById("demo").innerHTML);
+
+        }
+
+        function dec() {
+
+            document.getElementById("demo").style.fontSize = '20px';
+            alert(document.getElementById("demo").innerHTML);
+
+        }
+
+        function changecolor(color, size) {
+
+            document.getElementById("demo").style.color = color;
+            document.getElementById("demo").style.fontSize = size;
+
+
+        }
+
+        function hide1() {
+
+            document.getElementById("demo").style.display = "none";
+
+        }
+
+        function show1() {
+
+            document.getElementById("demo").style.display = "block";
+        }
+
+
+
+
+    </script>
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
